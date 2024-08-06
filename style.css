@@ -4,33 +4,101 @@
   box-sizing: border-box;
 }
 body {
-    background-color: #2a2a72;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  font-family: 'Poppins';
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.container {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
 }
 .user-form {
-  width: 100%;
-  max-width: 700px;
+  margin-bottom: 20px;
 }
 
 .user-form input {
   width: 100%;
-  display: block;
-  background-color: #4c2885;
-  border: none;
-  border-radius: 10px;
-  color: #fff;
-  padding: 1rem;
-  margin-bottom: 2rem;
-  font-family: inherit;
-  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
-    0 15px 40px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: border-color 0.3s;
 }
+
+.user-form input:focus {
+  border-color: #333;
+}
+
 .user-form input::placeholder {
-    color: #bbb;
-  }
+  color: #bbb;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.card .avatar {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.user-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.user-info p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.info {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.info li {
+  font-size: 1.1rem;
+}
+
+.info li strong {
+  color: #333;
+}
+
+/* Repo Styles */
+#repos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.repo {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.repo:hover {
+  background-color: #555;
+}

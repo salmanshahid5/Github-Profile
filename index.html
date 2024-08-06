@@ -7,10 +7,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
     <form class="user-form" id="form">
-        <input type="text" id="search" placeholder="Search a Github User">
+        <input type="text" id="search" placeholder="Enter GitHub username..." required>
     </form>
 
-    <main id="main"></main>
+    <main id="main">
+        <div class="card">
+            <div>
+                <img src="data:image/jpeg;base64,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" alt="" class="avator">
+            </div>
+            <div class="user-info">
+                <h2>name</h2>
+                <p>bio</p>
+
+                <ul class="info">
+                    <li><strong>Followers</strong></li>
+                    <li><strong>Following</strong></li>
+                    <li><strong>Repositries</strong></li>
+                </ul>
+
+                <div id="repos">
+                    <a class="repo" href="#" target="_blank" class="repo">Repo1</a>
+                    <a class="repo" href="#" target="_blank" class="repo">Repo2</a>
+                    <a class="repo" href="#" target="_blank" class="repo">Repo3</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    </div>
+
+    <script src="app.js"></script>
 </body>
 </html>
