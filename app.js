@@ -4,18 +4,35 @@ const main = document.getElementById("main");
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
-// get UserName
+// Get User Data
 async function getUser(username) {
   try {
     const response = await fetch(APIURL + username);
-    const responseJson = await response.json();
-    console.log(responseJson);
-  } catch (err) {
-    if(err.response.status == 404) {
-        createErrorCard('No profile with this username')
+    if (!response.ok) {
+      throw new Error('No profile with this username');
     }
+    const user = await response.json();
+    console.log(user);
+    displayUser(user);
+    getRepos(username);
+  } catch (err) {
+    createErrorCard(err.message);
   }
 }
 
-getUser("salmanshahid5");
+// Get User Repositories
+async function getRepos(username) {
+  try {
+    const response = await fetch(APIURL + username + "/repos");
+    if (!response.ok) {
+      throw new Error('Problem fetching repositories');
+    }
+    const repos = await response.json();
+    console.log(repos);
+    displayRepo(repos);
+  } catch (err) {
+    createErrorCard(err.message);
+  }
+}
+
 
